@@ -1,0 +1,91 @@
+// src/app/features/auth/pages/login/login.page.scss
+ion-content {
+  --background: #121212; // Fondo oscuro
+}
+
+.login-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .logo {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: white;
+    }
+  }
+
+  .login-form {
+    .custom-input {
+      --background: rgba(255, 255, 255, 0.05);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-radius: 8px;
+      --border-width: 1px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      margin-bottom: 16px;
+      --color: white;
+
+      ion-label {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .remember-me {
+      --background: transparent;
+      margin: 20px 0;
+      --color: white;
+    }
+
+    .login-button {
+      margin-top: 20px;
+      --border-radius: 8px;
+      height: 48px;
+      font-weight: 500;
+    }
+  }
+}
+
+
+:host ::ng-deep {
+  .login-toast {
+    text-align: center;
+    
+    .toast-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    ion-icon {
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
+  }
+}
+
+// Estilos específicos para los tipos de toast
+.toast-success {
+  --background: var(--ion-color-success);
+  --color: var(--ion-color-success-contrast);
+}
+
+.toast-error {
+  --background: var(--ion-color-danger);
+  --color: var(--ion-color-danger-contrast);
+}

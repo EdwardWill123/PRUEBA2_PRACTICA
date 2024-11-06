@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Catalogo</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="arrow-back"></ion-icon>
+        salir
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="product.thumbnail"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.title }}</h2>
+        <div class="price-container">
+          <span class="price">$ {{ product.price }}</span>
+          <span class="discount">{{ product.discountPercentage }}%</span>
+        </div>
+      </ion-label>
+      <ion-icon name="chevron-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadProducts($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando más productos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
